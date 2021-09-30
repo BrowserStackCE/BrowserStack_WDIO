@@ -5,19 +5,19 @@ describe('iOS Deep Link', () => {
 
         const safariBundleId = "com.apple.mobilesafari";
         const nativeAppBundleId = "com.browserstack.Sample-iOS"; // replace this with your app's bundle id
-        const paypalUrl = "https://paypal.github.io/react-paypal-js/iframe.html?id=example-venmobutton--horizontal&viewMode=story";
+        const Url = "EXAMAPLE";
 
-        // Launch Safari and load PayPal URL
+        // Launch Safari and load  URL
         driver.execute('mobile: launchApp', {bundleId: safariBundleId});
         const search = $("//*[@value='Search or enter website name']");
-        search.setValue(paypalUrl + '\n');
+        search.setValue(Url + '\n');
 
         // Find and click the Venmo button
-        const venmoButtonSelector = `type == 'XCUIElementTypeButton' && name CONTAINS 'venmo'`
-        const venmoButton = $(`-ios predicate string:${venmoButtonSelector}`)
-        venmoButton.click();
+        const ButtonSelector = `type == 'XCUIElementTypeButton' && name CONTAINS 'EXAMPLE'`
+        const Button = $(`-ios predicate string:${ButtonSelector}`)
+        Button.click();
         driver.waitUntil(
-            () => venmoButton.isClickable() ? venmo.click() : true
+            () => Button.isClickable() ? Button.click() : true
          );
 
         // Perform the rest of your test in the native app
