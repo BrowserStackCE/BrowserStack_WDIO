@@ -1,5 +1,5 @@
 # Mobile Tests
-This repo includes reference WebdriverIO scripts for interacting with the PayPal purchase buttons on mobile devices. 
+This repo includes reference WebdriverIO scripts for interacting with the buttons on mobile devices. 
 
 For more information on running WDIO tests with Browserstack, please see WDIO's [BrowserStack Service](https://webdriver.io/docs/browserstack-service/) documentation.
 
