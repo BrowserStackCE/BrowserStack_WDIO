@@ -10,7 +10,7 @@ exports.config = {
 
   commonCapabilities: {
     'build': 'Mobile Device Test Examples',
-    'project': "PayPal SDK",
+    'project': "SDK",
     'browserstack.geoLocation': 'DE',
     'locale': 'de',
     'language': 'de',
