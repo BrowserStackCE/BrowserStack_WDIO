@@ -7,26 +7,26 @@ describe('Deep Link', () => {
         const appActivity = driver.getCurrentActivity();
         const chromePackage = "com.android.chrome";
         const chromeActivity = "com.google.android.apps.chrome.Main";
-        const paypalUrl = "https://paypal.github.io/react-paypal-js/iframe.html?id=example-venmobutton--horizontal&viewMode=story";
+        const wfUrl = "Example";
 
-        // Launch Chrome app, switch to its context, and load PayPal URL
+        // Launch Chrome app, switch to its context, and load  URL
         driver.startActivity(chromePackage, chromeActivity);
         driver.waitUntil(
             () => driver.getContexts().length > 1
         )
         driver.switchContext('WEBVIEW_chrome');
-        driver.url(paypalUrl);
+        driver.url(wfUrl);
 
-        // Switch to iframe
+        // Switch to iframe Optional
         const frame = $('/html/body/div[3]/div/div/iframe[1]');
         frame.waitForExist({timeout: 5000, timeoutMsg: 'expected iframe to appear'});
         browser.switchToFrame(frame);
 
         // Click button within iframe
-        const payPalButton = $('/html/body/div[1]/div/div[1]/div');
-        payPalButton.click();
+        const Button = $('/html/body/div[1]/div/div[1]/div');
+        Button.click();
         
-        var venmoText = $('android=new UiSelector().text("Venmo").className("android.widget.TextView")');
+        var wfText = $('android=new UiSelector().text("wf").className("android.widget.TextView")');
         // Perform the rest of your test in the native app
         driver.pause(3000);
         driver.startActivity(appPackage, appActivity);
